@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-
+import { autobind } from 'core-decorators';
 import { Debounce } from './debounce';
 
 describe('debounce', () => {
@@ -7,6 +7,8 @@ describe('debounce', () => {
     let calls = 0;
 
     class MyClass {
+      // should work
+      @autobind
       @Debounce(10)
       fn() {
         calls++;
